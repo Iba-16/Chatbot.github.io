@@ -1,5 +1,5 @@
-# import chat
-
+from flask import Flask, render_template, request
+from chat import getAnswer
 
 app = Flask(__name__)
 
@@ -13,7 +13,8 @@ def home():
 @app.route("/get")
 def get_bot_response():
     userText = request.args.get('msg')
-    return str(my_bot.get_response(userText))
+    print(userText)
+    return getAnswer(userText)
 
 if __name__ == "__main__":
     app.run(port=8000, debug=True)

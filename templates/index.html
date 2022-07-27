@@ -1,32 +1,70 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="/static/style.css">
-        <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-    </head>
-    <body>
-        <h1>MedBot</h1>
-        <div id="container">
-            <div>
-                <img src="/static/thermometer.png" alt="themometer">
-            </div>
 
-            <div>
-                <div id="chatbox">
-                    <p class="botText"><span>Here to assist your medical needs :)</span></p>
-                </div>
-                <div id="userInput">
-                    <input id="textInput" type="text" name="msg" placeholder="Message">
-                    <input id="buttonInput" type="submit" value="Send">
-                </div>
-            </div>
+<head>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <!-- <script type="text/javascript" src="main.js"></script> -->
+</head>
 
-            <div>
-                <img src="/static/heartbeat.png" alt="heartbeat">
-            </div>
-
-            
-            <script src="main.js"/>
+<body>
+    <h1>MedBot</h1>
+    <div id="container">
+        <div>
+            <img src="/static/thermometer.png" alt="themometer">
         </div>
-    </body>
+
+        <div>
+            <div id="chatbox">
+                <p class="botText"><span>Here to assist your medical needs :)</span></p>
+            </div>
+            <div id="userInput">
+                <input id="text" type="text" name="msg" placeholder="Message">
+                <!-- <form method="POST">
+                    <input id="text" name="text">
+                    <input id="buttonInput" type="submit">
+                </form> -->
+
+                <input id="buttonInput" type="submit" value="Send">
+            </div>
+        </div>
+
+        <div>
+            <img src="/static/heartbeat.png" alt="heartbeat">
+        </div>
+
+    </div>
+
+    <script>
+        function getBotResponse() {
+            var rawText = $("#text").val();
+            var userHtml = '<p class="userText"><span>' + rawText + '</span></p>';
+            $("#text").val("");
+            $("#chatbox").append(userHtml);
+            document.getElementById('userInput').scrollIntoView({
+                block: 'start',
+                behavior: 'smooth'
+            });
+            $.get("/get", {
+                msg: rawText
+            }).done(function (data) {
+                var botHtml = '<div class="botText">' + data + '</div>';
+                $("#chatbox").append(botHtml);
+                document.getElementById('userInput').scrollIntoView({
+                    block: 'start',
+                    behavior: 'smooth'
+                });
+            });
+        }
+        $("#text").keypress(function (e) {
+            if (e.which == 13) {
+                getBotResponse();
+            }
+        });
+        $("#buttonInput").click(function () {
+            getBotResponse();
+        })
+    </script>
+</body>
+
 </html>

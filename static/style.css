@@ -67,6 +67,75 @@ input{
 
   }
 
+  #userInput {
+    margin-left: auto;
+    margin-right: auto;
+    width: 87%;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+#text {
+    width: 87%;
+    border: none;
+    border-bottom: 3px solid #009688;
+    font-family: monospace;
+    font-size: 17px;
+}
+
+#buttonInput {
+    margin-left: 5px;
+    padding: 5px;
+    font-family: monospace;
+    font-size: 17px;
+}
+
+.userText {
+    color: white;
+    font-family: monospace;
+    font-size: 17px;
+    text-align: right;
+    line-height: 30px;
+}
+
+.userText span {
+    background-color: #009688;
+    padding: 10px;
+    border-radius: 2px;
+}
+
+/* .botText {
+    color: white;
+    font-family: monospace;
+    font-size: 17px;
+    text-align: left;
+    line-height: 30px;
+} */
+
+.botText{
+    background-color: #EF5350;
+    padding: 10px;
+    border-radius: 2px;
+
+    color: white;
+    font-family: monospace;
+    font-size: 17px;
+    text-align: left;
+    line-height: 30px;
+}
+
+#tidbit {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 300px;
+}
+
+#chatbot {
+    max-height: 300px;
+}
 
     
     

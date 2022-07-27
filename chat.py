@@ -2,9 +2,10 @@ import random
 import json
 import torch
 from weather import construct
-from stock import get_predict
+# from stock import get_predict
 from train import neural_network
 from chatbot import bagOfWords, tokenize
+from flask import Flask, render_template, request
 
 with open('intent.json', 'r') as f:
     intents = json.load(f)
@@ -41,15 +42,15 @@ def getAnswer(s):
             if tag == intent["tag"]:
                 return(random.choice(intent['responses']))
 
-        if tag == "weather":
-            city = input("You: ")
-            print("PredictorBot: Weather code?")
-            days = int(input("You: "))
-            print(construct(city, days))
+        # if tag == "weather":
+        #     city = request.form["text"]
+        #     print("PredictorBot: Weather code?")
+        #     days = int(input("You: "))
+        #     print(construct(city, days))
 
-        if tag == "stock":
-            s = input("You: ")
-            get_predict(s)
+        # if tag == "stock":
+        #     s = request.form["text"]
+        #     get_predict(s)
 
 
     else:
