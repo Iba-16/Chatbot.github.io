@@ -57,6 +57,7 @@ input{
       font-family: 'Courier New', Courier, monospace;
       color: aliceblue;
       font-size: 100%;
+      border-radius: 25px;
 
   }
 
@@ -64,6 +65,7 @@ input{
       border:none;
       font-family: 'Courier New', Courier, monospace ;
       font-size: 100%;
+      border-radius: 25px;
 
   }
 
