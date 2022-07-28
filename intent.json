@@ -1,9 +1,10 @@
 {
   "intents": [
     {
-      "tag": "hello",
+      "tag": "start",
       "patterns": [
         "Hi",
+        "is anyone here?",
         "Hey",
         "Hello",
         "Good day"
@@ -15,6 +16,7 @@
         "Hi there, how can I help?"
       ]
     },
+
     {
       "tag": "greeting",
       "patterns":[
@@ -94,7 +96,8 @@
       ],
       "responses": [
         "Why did the hipster burn his mouth? He drank the coffee before it was cool.",
-        "What did the buffalo say when his son left for college? Bison."
+        "What did the buffalo say when his son left for college? Bison.",
+        "Why do we tell actors to break a leg? Because every play has a cast."
       ]
     }
   ]

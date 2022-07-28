@@ -9,14 +9,14 @@ import json
 import pickle
 import ssl
 
-try:
-    _create_unverified_https_context = ssl._create_unverified_context
-except AttributeError:
-    pass
-else:
-    ssl._create_default_https_context = _create_unverified_https_context
+# try:
+#     _create_unverified_https_context = ssl._create_unverified_context
+# except AttributeError:
+#     pass
+# else:
+#     ssl._create_default_https_context = _create_unverified_https_context
 
-nltk.download()
+# nltk.download()
 
 with open("intent.json") as file:
     data = json.load(file)
@@ -110,10 +110,14 @@ def bag_of_words(s, words):
 def chat(inp):
     results = model.predict([bag_of_words(inp, words)])
     results_index = numpy.argmax(results)
-    tag = labels[results_index]
+    print(results)
+    if results[0][results_index]>0.70:
+        tag = labels[results_index]
 
-    for tg in data["intents"]:
-        if tg['tag'] == tag:
-            responses = tg['responses']
+        for tg in data["intents"]:
+            if tg['tag'] == tag:
+                responses = tg['responses']
 
-    return random.choice(responses)
+        return random.choice(responses)
+    else:
+        return "Sorry, I don't understand."
