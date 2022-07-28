@@ -1,13 +1,22 @@
 import nltk
 from nltk.stem.lancaster import LancasterStemmer
 stemmer = LancasterStemmer()
-
 import numpy
 import tflearn
 import tensorflow
 import random
 import json
 import pickle
+import ssl
+
+try:
+    _create_unverified_https_context = ssl._create_unverified_context
+except AttributeError:
+    pass
+else:
+    ssl._create_default_https_context = _create_unverified_https_context
+
+nltk.download()
 
 with open("intent.json") as file:
     data = json.load(file)
@@ -68,6 +77,7 @@ except:
 
 try:
     model.load('model.tflearn')
+    print("using saved model")
 except:
     # tensorflow.reset_default_graph()
 
@@ -81,6 +91,7 @@ except:
 
     model.fit(training, output, n_epoch=1000, batch_size=8, show_metric=True)
     model.save("model.tflearn")
+    print("training the model")
 
 def bag_of_words(s, words):
     bag = [0 for _ in range(len(words))]
