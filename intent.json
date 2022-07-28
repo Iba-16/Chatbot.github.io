@@ -1,12 +1,10 @@
 {
   "intents": [
     {
-      "tag": "greeting",
+      "tag": "hello",
       "patterns": [
         "Hi",
         "Hey",
-        "How are you",
-        "Is anyone there?",
         "Hello",
         "Good day"
       ],
@@ -15,6 +13,18 @@
         "Hello, thanks for visiting",
         "Hi there, what can I do for you?",
         "Hi there, how can I help?"
+      ]
+    },
+    {
+      "tag": "greeting",
+      "patterns":[
+        "how are you?",
+        "how is your day?",
+        "how is it going?"
+      ],
+      "responses":[
+        "Everything is good! How are you?",
+        "Perfect! How are you doing?"
       ]
     },
     {
