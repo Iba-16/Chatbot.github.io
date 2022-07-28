@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from chat import getAnswer
+from tf_train import chat
 app = Flask(__name__)
 
 
@@ -16,8 +16,7 @@ def resources():
 @app.route("/get")
 def get_bot_response():
     userText = request.args.get('msg')
-    print(userText)
-    return getAnswer(userText)
+    return chat(userText)
 
 if __name__ == "__main__":
     app.run(port=8000, debug=True)
