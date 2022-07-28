@@ -158,6 +158,7 @@ ul {
     background-color: rgb(17, 89, 153);
     align-self: center;
     overflow: hidden;
+    border-radius: 25px;
 } 
 
 li {
@@ -171,14 +172,15 @@ li a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+
   }
 
   .active{
-      background-color: rgb(109, 111, 114);
+      background-color: rgb(28, 46, 77);
   }
 
 li a:hover{
-    background-color: rgb(180, 180, 180);
+    background-color: rgb(145, 159, 204);
 }
   
   /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */

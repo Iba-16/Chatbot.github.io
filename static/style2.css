@@ -49,9 +49,10 @@ ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    background-color: rgb(17, 89, 153);
+    background-color: rgb(17, 89, 154);
     align-self: center;
     overflow: hidden;
+    border-radius: 25px;
 } 
 
 li {
@@ -68,10 +69,10 @@ li a {
   }
 
   .active{
-      background-color: rgb(145, 166, 199);
+      background-color: rgb(28, 46, 77);
   }
 
 
   li a:hover{
-    background-color: rgb(180, 180, 180);
+    background-color: rgb(145, 159, 204);
 }
