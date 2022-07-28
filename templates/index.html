@@ -8,15 +8,17 @@
 </head>
 
 <body>
+
+    <ul>
+        <li><a href="/" class="active">Home</a></li>
+        <li><a href="/resources">Resources</a></li>
+      </ul> <br>
+
+
     <h1>MedBot</h1>
+
     <div id="container">
-        <section>
-            <nav>
-              <ul>
-                <li><a href="/resources">Resources</a></li>
-              </ul>
-            </nav>
-          </section>
+
         <div>
             <img src="/static/thermometer.png" alt="themometer">
         </div>
@@ -27,11 +29,6 @@
             </div>
             <div id="userInput">
                 <input id="text" type="text" name="msg" placeholder="Message">
-                <!-- <form method="POST">
-                    <input id="text" name="text">
-                    <input id="buttonInput" type="submit">
-                </form> -->
-
                 <input id="buttonInput" type="submit" value="Send">
             </div>
         </div>
@@ -42,36 +39,39 @@
 
     </div>
 
-    <script>
-        function getBotResponse() {
-            var rawText = $("#text").val();
-            var userHtml = '<p class="userText"><span>' + rawText + '</span></p>';
-            $("#text").val("");
-            $("#chatbox").append(userHtml);
+</body>
+
+
+<script>
+    function getBotResponse() {
+        var rawText = $("#text").val();
+        var userHtml = '<p class="userText"><span>' + rawText + '</span></p>';
+        $("#text").val("");
+        $("#chatbox").append(userHtml);
+        document.getElementById('userInput').scrollIntoView({
+            block: 'start',
+            behavior: 'smooth'
+        });
+        $.get("/get", {
+            msg: rawText
+        }).done(function (data) {
+            var botHtml = '<div class="botText">' + data + '</div>';
+            $("#chatbox").append(botHtml);
             document.getElementById('userInput').scrollIntoView({
                 block: 'start',
                 behavior: 'smooth'
             });
-            $.get("/get", {
-                msg: rawText
-            }).done(function (data) {
-                var botHtml = '<div class="botText">' + data + '</div>';
-                $("#chatbox").append(botHtml);
-                document.getElementById('userInput').scrollIntoView({
-                    block: 'start',
-                    behavior: 'smooth'
-                });
-            });
-        }
-        $("#text").keypress(function (e) {
-            if (e.which == 13) {
-                getBotResponse();
-            }
         });
-        $("#buttonInput").click(function () {
+    }
+    $("#text").keypress(function (e) {
+        if (e.which == 13) {
             getBotResponse();
-        })
-    </script>
+        }
+    });
+    $("#buttonInput").click(function () {
+        getBotResponse();
+    })
+</script>
 </body>
 
 </html>

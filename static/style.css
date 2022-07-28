@@ -2,6 +2,7 @@ body {
     background-color: rgb(236, 250, 252);
     /* display: flex; */
     text-align: center;
+    border-radius: 25px;
 }
 
 
@@ -11,9 +12,14 @@ h1 {
     font-family: 'Courier New', Courier, monospace;
     font-size: 300%;
 
-    margin: 0 auto;
+    margin: 0;
     text-align: center;
     margin-top: 145px;
+}
+
+#big-container{
+    display: flex;
+    flex-direction: row;
 }
 
 #container {
@@ -34,6 +40,7 @@ h1 {
     margin-right: 50%; */
     width: 60%;
     margin-top: 30px;
+
 }
 
 img {
@@ -52,11 +59,12 @@ input{
 
   #buttonInput{
       background-color: rgb(17, 89, 153);
-      border: 2px;
+      border: none;
       border-color: rgb(17, 89, 153);
       font-family: 'Courier New', Courier, monospace;
       color: aliceblue;
       font-size: 100%;
+      border-radius: 25px;
 
   }
 
@@ -64,7 +72,8 @@ input{
       border:none;
       font-family: 'Courier New', Courier, monospace ;
       font-size: 100%;
-
+      border-radius: 25px;
+      
   }
 
   #userInput {
@@ -74,12 +83,13 @@ input{
     margin-top: 60px;
     display: flex;
     flex-direction: row;
+    border-radius: 25px;
 }
 
 #text {
     width: 87%;
     border: none;
-    border-bottom: 3px solid #009688;
+    border-bottom: 3px solid rgb(236, 245, 253);
     font-family: monospace;
     font-size: 17px;
 }
@@ -89,20 +99,22 @@ input{
     padding: 5px;
     font-family: monospace;
     font-size: 17px;
+    border-radius: 25px;
 }
 
 .userText {
-    color: white;
+    color: rgb(17, 89, 153);
     font-family: monospace;
     font-size: 17px;
     text-align: right;
     line-height: 30px;
+    border-radius: 25px;;
 }
 
 .userText span {
-    background-color: #009688;
+    background-color: rgb(211, 230, 247);
     padding: 10px;
-    border-radius: 2px;
+    border-radius: 25px;
 }
 
 /* .botText {
@@ -114,11 +126,11 @@ input{
 } */
 
 .botText{
-    background-color: #EF5350;
+    background-color: rgb(191, 225, 255);;
     padding: 10px;
-    border-radius: 2px;
+    border-radius: 25px;
 
-    color: white;
+    color: rgb(17, 89, 153);
     font-family: monospace;
     font-size: 17px;
     text-align: left;
@@ -137,28 +149,37 @@ input{
 }
 
     
-nav {
-    float: left;
-    width: 30%;
-    height: 300px; /* only for demonstration, should be removed */
-    background: #ccc;
-    padding: 20px;
-  }
-  
-  /* Style the list inside the menu */
-  nav ul {
+
+
+ul {
     list-style-type: none;
+    margin: 0;
     padding: 0;
+    background-color: rgb(17, 89, 153);
+    align-self: center;
+    overflow: hidden;
+} 
+
+li {
+    float: left;
+}
+
+  
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
   }
-  
-  
-  /* Clear floats after the columns */
-  section::after {
-    content: "";
-    display: table;
-    clear: both;
+
+  .active{
+      background-color: rgb(109, 111, 114);
   }
-  
+
+li a:hover{
+    background-color: rgb(180, 180, 180);
+}
   
   /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
   @media (max-width: 600px) {
