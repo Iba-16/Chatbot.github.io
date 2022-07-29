@@ -1,0 +1,113 @@
+{
+  "intents": [
+    {
+      "tag": "start",
+      "patterns": [
+        "Hi",
+        "is anyone here?",
+        "Hey",
+        "Hello",
+        "Good day"
+      ],
+      "responses": [
+        "Hi there, what can I do for you?",
+        "Hi there, how can I help?"
+      ]
+    },
+
+    {
+      "tag": "greeting",
+      "patterns":[
+        "how are you?",
+        "how is your day?",
+        "how is it going?"
+      ],
+      "responses":[
+        "Everything is good! How are you?",
+        "Perfect! How are you doing?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "See you later", "Goodbye"],
+      "responses": [
+        "See you later, thanks for visiting",
+        "Have a nice day",
+        "Bye! Come back again soon."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!"],
+      "responses": ["Happy to help!", "Any time!", "My pleasure"]
+    },
+    {
+      "tag": "help",
+      "patterns": [
+        "How can you help me?",
+        "What can you tell me?",
+        "What can you predict?",
+        "What do you do?"
+      ],
+      "responses": [
+        "I'm a predictor bot! I can tell you about weather and stock market.",
+        "I can tell you about weather forecasts and stock market predictions.",
+        "I use machine learning to make predictions!"
+      ]
+    },
+    {
+      "tag": "weather",
+      "patterns": [
+        "How is the weather today?",
+        "Should I go out today?",
+        "When can I go out?",
+        "What is the temperature?",
+        "Is it sunny outside?",
+        "Is it cloudy?",
+        "Is it going to rain?",
+        "Is it cold outside?",
+        "Can I go out?",
+        "How is the weather?"
+      ],
+      "responses": [
+        "I can tell you the forecasts, where do you live?"
+      ]
+    },
+    {
+      "tag": "stock",
+      "patterns": [
+        "Is the stock price going up?",
+        "predict the stock price.",
+        "Should I buy stock?"
+      ],
+      "responses": [
+        "Which stock are you interested in?"
+      ]
+    },
+
+    {
+      "tag": "funny",
+      "patterns": [
+        "Tell me a joke!",
+        "Tell me something funny!",
+        "Do you know a joke?"
+      ],
+      "responses": [
+        "Why did the hipster burn his mouth? He drank the coffee before it was cool.",
+        "What did the buffalo say when his son left for college? Bison.",
+        "Why do we tell actors to break a leg? Because every play has a cast.",
+        "What do you call a can opener that doesn't work? A can't opener!"
+        
+      ]
+    },
+
+    {
+      "tag": "symptoms",
+      "patterns":[
+        "fever", "cough", "dry cough", "sore throat", "hyper tension", "contact with covid patient", "attended large gathering",
+        "covid 19", "exposed public places", "I'm not feeling good", "I have fever", "I'm coughing", "do I have covid?"
+      ],
+      "responses":["I can help you if you tell me more about your symptoms."]
+    }
+  ]
+}

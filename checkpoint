@@ -1,0 +1,2 @@
+model_checkpoint_path: "/Users/jasmine/Desktop/Chatbot.github.io/model.tflearn"
+all_model_checkpoint_paths: "/Users/jasmine/Desktop/Chatbot.github.io/model.tflearn"

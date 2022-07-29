@@ -139,6 +139,14 @@ img {
 
 #chatbot {
     max-height: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+#chat-container{
+    display: flex;
+    flex-direction: column;
+    max-width: 350px;
 }
 
     
