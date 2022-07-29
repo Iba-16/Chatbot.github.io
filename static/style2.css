@@ -76,3 +76,12 @@ li a {
   li a:hover{
     background-color: rgb(145, 159, 204);
 }
+
+
+img {
+    width: 150px; 
+    height: auto; 
+    margin: 50px; 
+    
+    
+  }
