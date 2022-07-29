@@ -98,9 +98,18 @@
         "Why did the hipster burn his mouth? He drank the coffee before it was cool.",
         "What did the buffalo say when his son left for college? Bison.",
         "Why do we tell actors to break a leg? Because every play has a cast.",
-        "What do you call a can opener that doesn't work? A can't opener!",
+        "What do you call a can opener that doesn't work? A can't opener!"
         
       ]
+    },
+
+    {
+      "tag": "symptoms",
+      "patterns":[
+        "fever", "cough", "dry cough", "sore throat", "hyper tension", "contact with covid patient", "attended large gathering",
+        "covid 19", "exposed public places", "I'm not feeling good", "I have fever", "I'm coughing", "do I have covid?"
+      ],
+      "responses":["I can help you if you tell me more about your symptoms."]
     }
   ]
 }
