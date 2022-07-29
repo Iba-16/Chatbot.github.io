@@ -45,7 +45,7 @@
 <script>
     function getBotResponse() {
         var rawText = $("#text").val();
-        var userHtml = '<p class="userText"><span>' + rawText + '</span></p>';
+        var userHtml = '<div class="userText">' + rawText + '</div>';
         $("#text").val("");
         $("#chatbox").append(userHtml);
         document.getElementById('userInput').scrollIntoView({

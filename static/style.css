@@ -51,11 +51,7 @@ img {
     /* display: block; */
   }
 
-input{
-    /* width: fit-content;
-    aspect-ratio: 3;
-    padding: 3px; */
-}
+
 
   #buttonInput{
       background-color: rgb(17, 89, 153);
@@ -92,6 +88,7 @@ input{
     border-bottom: 3px solid rgb(236, 245, 253);
     font-family: monospace;
     font-size: 17px;
+    margin: 10px;
 }
 
 #buttonInput {
@@ -109,21 +106,15 @@ input{
     text-align: right;
     line-height: 30px;
     border-radius: 25px;;
-}
-
-.userText span {
     background-color: rgb(211, 230, 247);
     padding: 10px;
     border-radius: 25px;
+    line-height: 30px;
+    margin:10px;
+    max-width: 60%;
+    float:right
 }
 
-/* .botText {
-    color: white;
-    font-family: monospace;
-    font-size: 17px;
-    text-align: left;
-    line-height: 30px;
-} */
 
 .botText{
     background-color: rgb(191, 225, 255);;
@@ -135,6 +126,8 @@ input{
     font-size: 17px;
     text-align: left;
     line-height: 30px;
+    margin: 10px;
+    float:left;
 }
 
 #tidbit {
